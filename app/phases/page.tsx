@@ -1,0 +1,1 @@
+import {Phases} from "../../components/Site"; export default function Page(){return <Phases/>}
