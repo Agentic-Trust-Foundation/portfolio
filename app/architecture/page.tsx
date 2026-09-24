@@ -1,0 +1,1 @@
+import {Architecture} from "../../components/Site"; export default function Page(){return <Architecture/>}
