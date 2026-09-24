@@ -1,0 +1,1 @@
+import {Repositories} from "../../components/Site"; export default function Page(){return <Repositories/>}
