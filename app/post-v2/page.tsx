@@ -1,0 +1,1 @@
+import {PostV2} from "../../components/Site"; export default function Page(){return <PostV2/>}
