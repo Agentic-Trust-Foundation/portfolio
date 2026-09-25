@@ -24,7 +24,7 @@ export function LiveTerminal() {
   useEffect(() => setIndex(tick % lines.length), [tick]);
 
   return (
-    <div className="terminal-panel flex h-[260px] min-h-[260px] max-h-[260px] flex-col overflow-hidden">
+    <div className="terminal-panel flex h-[270px] min-h-[270px] max-h-[270px] flex-col overflow-hidden">
       <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-4 py-3">
         <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[.18em] text-slate-400">
           <Activity size={13} className="text-emerald-400" />
