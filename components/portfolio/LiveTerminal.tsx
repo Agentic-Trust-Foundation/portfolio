@@ -24,7 +24,7 @@ export function LiveTerminal() {
   useEffect(() => setIndex(tick % lines.length), [tick]);
 
   return (
-    <div className="terminal-panel flex h-[220px] min-h-[220px] max-h-[220px] flex-col overflow-hidden">
+    <div className="terminal-panel flex h-[260px] min-h-[260px] max-h-[260px] flex-col overflow-hidden">
       <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-4 py-3">
         <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[.18em] text-slate-400">
           <Activity size={13} className="text-emerald-400" />
@@ -36,7 +36,7 @@ export function LiveTerminal() {
         </span>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed">
+      <div className="min-h-0 flex-1 overflow-hidden p-4 font-mono text-[11px] leading-relaxed">
         <div className="space-y-2">
           <div className="text-slate-500">$ atf observe --agent 402</div>
           {lines.slice(0, index + 1).map((line, i) => (
