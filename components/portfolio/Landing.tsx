@@ -80,15 +80,20 @@ export function Landing() {
               <span className="status-dot"/> Agentic Trust Foundation / ATF + Agent-Pay
             </motion.div>
             <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:.08}} className="text-balance text-5xl font-semibold leading-[.95] tracking-[-.05em] sm:text-7xl lg:text-[92px]">
-              Securing the<br/><span className="bg-gradient-to-r from-emerald-300 via-cyan-300 to-blue-400 bg-clip-text text-transparent">Autonomous Agent Economy.</span>
+              <span className="text-slate-300">Trust, Delegation &amp; Access</span><br/><span className="bg-gradient-to-r from-emerald-300 via-cyan-300 to-blue-400 bg-clip-text text-transparent">for the Agentic Internet.</span>
             </motion.h1>
             <motion.p initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:.16}} className="mt-8 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
-              A trust, delegation and controlled-access layer for agents that can act, transact and collaborate on behalf of humans.
+              An open trust, delegation and authorization layer for AI agents acting on behalf of people and organizations. ATF establishes authority; Agent-Pay applies financial controls and executes within that authority.
             </motion.p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a href="#ecosystem" className="group glow-button-primary"><span>Explore Ecosystem</span><ArrowDown size={15} className="transition-transform group-hover:translate-y-1"/></a>
               <a href="https://github.com/Agentic-Trust-Foundation/agentic-trust" target="_blank" rel="noreferrer" className="glow-button"><Github size={15}/> Read Specification <ExternalLink size={12} className="opacity-50"/></a>
             </div>
+          </div>
+          <div className="mt-8 grid gap-3 text-xs leading-5 text-slate-500 sm:grid-cols-3">
+            <div className="rounded-xl border border-white/10 bg-black/20 p-3"><b className="text-slate-300">ATF</b><br/>Identity, delegation, authorization, trust and accountability.</div>
+            <div className="rounded-xl border border-white/10 bg-black/20 p-3"><b className="text-slate-300">Agent-Pay</b><br/>Financial policy, approvals, instruments and payment execution.</div>
+            <div className="rounded-xl border border-white/10 bg-black/20 p-3"><b className="text-slate-300">Not</b><br/>A bank, payment processor, blockchain, LLM framework, or protocol replacement.</div>
           </div>
           <div className="mt-16 grid gap-5 lg:grid-cols-[1fr_360px] lg:items-stretch">
             <div className="grid h-[270px] grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur">
