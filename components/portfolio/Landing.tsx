@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, ArrowRight, Check, ExternalLink, Github, LockKeyhole, Network, ShieldCheck, WalletCards, Globe2 } from "lucide-react";
+import { ArrowDown, ArrowRight, Check, ExternalLink, Github, ShieldCheck, WalletCards, Globe2 } from "lucide-react";
 import Link from "next/link";
 import { NetworkCanvas } from "./NetworkCanvas";
 import { LiveTerminal } from "./LiveTerminal";
@@ -108,7 +108,7 @@ export function Landing() {
             <div className="space-y-3">
               {ecosystem.map((item,i)=>{
                 const I=item.icon;
-                return <button key={item.id} onMouseEnter={()=>{setSelected(i);setTab(0)}} onClick={()=>{setSelected(i);setTab(0)}} className={`ecosystem-card ${selected===i ? "ecosystem-active":""}`}>
+                return <button key={item.id} onMouseEnter={()=>{setSelected(i);setTab(0);setIntegration(false)}} onClick={()=>{setSelected(i);setTab(0);setIntegration(false)}} className={`ecosystem-card ${selected===i ? "ecosystem-active":""}`}>
                   <div className="flex items-start justify-between"><span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[.03]"><I size={18}/></span><ArrowRight size={16} className={selected===i ? "text-emerald-300":"text-slate-700"}/></div>
                   <div className="mt-6 text-[10px] font-bold tracking-[.2em] text-slate-500">{item.label}</div>
                   <div className="mt-2 font-mono text-lg">{item.name}</div>
