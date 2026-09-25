@@ -1,1 +1,5 @@
-import {Home} from "../components/Site"; export default function Page(){return <Home/>}
+import { Landing } from "../components/portfolio/Landing";
+
+export default function Page() {
+  return <Landing />;
+}
