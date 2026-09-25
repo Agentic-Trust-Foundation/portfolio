@@ -47,7 +47,7 @@ export function NetworkCanvas() {
         if (p.x < -20 || p.x > width+20) p.vx *= -1;
         if (p.y < -20 || p.y > height+20) p.vy *= -1;
         const dx = mouse.x-p.x, dy = mouse.y-p.y, d = Math.hypot(dx,dy);
-        if (d < 150) { p.x -= dx/d*.08*(150-d)/150; p.y -= dy/d*.08*(150-d)/150; }
+        if (d > 0 && d < 150) { p.x -= dx/d*.08*(150-d)/150; p.y -= dy/d*.08*(150-d)/150; }
       }
       for (let i=0;i<points.length;i++) {
         for (let j=i+1;j<points.length;j++) {
