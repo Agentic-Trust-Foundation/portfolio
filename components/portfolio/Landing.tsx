@@ -118,14 +118,40 @@ export function Landing() {
             </div>
             <motion.div key={E.id} initial={{opacity:0,x:12}} animate={{opacity:1,x:0}} className="min-h-[410px] rounded-3xl border border-white/10 bg-white/[.025] p-6 sm:p-8">
               <div className="flex items-center gap-3"><span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-300"><Icon size={20}/></span><div><div className="font-mono text-lg">{E.name}</div><div className="text-xs text-slate-500">interactive architecture surface</div></div></div>
-              <div className="mt-8 flex flex-wrap gap-2">{E.tabs.map(([name],i)=><button key={name} onClick={()=>setTab(i)} className={`tab-button ${tab===i ? "tab-active":""}`}>{name}</button>)}</div>
-              <div className="mt-8 rounded-2xl border border-white/10 bg-black/20 p-6">
-                <div className="text-xs font-bold uppercase tracking-[.18em] text-emerald-400">0{tab+1} / {E.tabs.length.toString().padStart(2,"0")}</div>
-                <h3 className="mt-3 text-2xl font-medium">{E.tabs[tab][0]}</h3>
-                <p className="mt-3 max-w-xl leading-7 text-slate-400">{E.tabs[tab][1]}</p>
-                <div className="mt-8 h-px bg-gradient-to-r from-emerald-400/70 via-blue-400/30 to-transparent"/>
-                <div className="mt-5 flex items-center gap-2 text-xs text-slate-500"><Check size={14} className="text-emerald-400"/> authority remains bounded at this layer</div>
-              </div>
+              <div className="mt-8 flex flex-wrap gap-2">{E.tabs.map(([name],i)=><button key={name} onClick={()=>{setTab(i);setIntegration(false)}} className={`tab-button ${!integration && tab===i ? "tab-active":""}`}>{name}</button>)}<button onClick={()=>setIntegration(true)} className={`tab-button ${integration ? "tab-active":""}`}>Quick Integration</button></div>
+              {integration ? (
+                <div className="mt-8">
+                  <QuickIntegration
+                    language={E.id === "adapter" ? "TypeScript" : E.id === "pay" ? "TypeScript" : "Python"}
+                    code={E.id === "trust" ? `const decision = await atf.authorize({
+  agent: "agent-402",
+  action: "commerce.purchase",
+  delegation: "purchase:merchant.example"
+});
+
+if (decision.allowed) execute();` : E.id === "pay" ? `const payment = await agentPay.authorize({
+  amount: 149,
+  currency: "USD",
+  purpose: "subscription"
+});
+
+await payment.execute();` : `const session = await siteAdapter.bind({
+  origin: "https://merchant.example",
+  capability: "checkout"
+});
+
+await session.execute(intent);`}
+                  />
+                </div>
+              ) : (
+                <div className="mt-8 rounded-2xl border border-white/10 bg-black/20 p-6">
+                  <div className="text-xs font-bold uppercase tracking-[.18em] text-emerald-400">0{tab+1} / {E.tabs.length.toString().padStart(2,"0")}</div>
+                  <h3 className="mt-3 text-2xl font-medium">{E.tabs[tab][0]}</h3>
+                  <p className="mt-3 max-w-xl leading-7 text-slate-400">{E.tabs[tab][1]}</p>
+                  <div className="mt-8 h-px bg-gradient-to-r from-emerald-400/70 via-blue-400/30 to-transparent"/>
+                  <div className="mt-5 flex items-center gap-2 text-xs text-slate-500"><Check size={14} className="text-emerald-400"/> authority remains bounded at this layer</div>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>
