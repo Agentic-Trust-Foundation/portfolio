@@ -91,7 +91,7 @@ export function Landing() {
             </div>
           </div>
           <div className="mt-16 grid gap-5 lg:grid-cols-[1fr_360px] lg:items-stretch">
-            <div className="grid h-[220px] grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur">
+            <div className="grid h-[260px] grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur">
               {[["01","Identity","Who is acting?"],["02","Authority","What may it do?"],["03","Policy","Under which limits?"],["04","Audit","What actually happened?"]].map(([n,t,s])=><div key={n} className="bg-slate-950/75 p-4 sm:p-5"><div className="text-[10px] font-mono text-emerald-400">{n}</div><div className="mt-2 font-medium">{t}</div><div className="mt-1 text-xs text-slate-500">{s}</div></div>)}
             </div>
             <LiveTerminal/>
