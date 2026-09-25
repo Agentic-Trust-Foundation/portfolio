@@ -1,6 +1,8 @@
 # Agentic Trust Foundation — Engineering Portfolio
 
-Evidence-driven portfolio for the Agentic Trust Foundation and Agent-Pay ecosystem.
+**Trust, Delegation & Access Layer for the Agentic Internet.**
+
+Evidence-driven portfolio for the Agentic Trust Foundation and Agent-Pay ecosystem. The site is designed to answer the project-level questions first: **what is this, why does it exist, how do ATF and Agent-Pay relate, what is actually verified, and what is still evidence-gated?**
 
 ## Stack
 - Next.js App Router
@@ -8,6 +10,12 @@ Evidence-driven portfolio for the Agentic Trust Foundation and Agent-Pay ecosyst
 - Static-first presentation
 - Responsive CSS
 - Vercel-ready
+
+## Canonical project definition
+
+The portfolio follows the canonical project definition in the agentic-trust repository. ATF is the trust/delegation/authorization layer; Agent-Pay is the financial control/execution layer built on ATF authority; the Site Adapter is the service integration layer.
+
+The portfolio is a presentation and evidence surface, not an independent interoperability or production certification suite.
 
 ## Routes
 - / — overview and engineering journey
