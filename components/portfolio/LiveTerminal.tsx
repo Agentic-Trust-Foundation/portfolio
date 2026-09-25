@@ -13,32 +13,47 @@ const lines = [
 ];
 
 export function LiveTerminal() {
-  const [index,setIndex] = useState(0);
-  const [tick,setTick] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
-    const id=setInterval(()=>setTick(v=>v+1),1700);
-    return ()=>clearInterval(id);
-  },[]);
+    const id = setInterval(() => setTick((v) => v + 1), 1700);
+    return () => clearInterval(id);
+  }, []);
 
-  useEffect(()=>setIndex(tick % lines.length),[tick]);
+  useEffect(() => setIndex(tick % lines.length), [tick]);
 
   return (
-    <div className="terminal-panel">
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+    <div className="terminal-panel flex h-[220px] min-h-[220px] max-h-[220px] flex-col overflow-hidden">
+      <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-4 py-3">
         <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[.18em] text-slate-400">
-          <Activity size={13} className="text-emerald-400"/> trust monitor
+          <Activity size={13} className="text-emerald-400" />
+          trust monitor
         </div>
-        <span className="flex items-center gap-1.5 text-[10px] text-emerald-400"><i className="status-dot"/>LIVE</span>
+        <span className="flex items-center gap-1.5 text-[10px] text-emerald-400">
+          <i className="status-dot" />
+          LIVE
+        </span>
       </div>
-      <div className="space-y-2 p-4 font-mono text-[11px] leading-relaxed">
-        <div className="text-slate-500">$ atf observe --agent 402</div>
-        {lines.slice(0,index+1).map((line,i)=>(
-          <div key={line} className={i===index ? "text-emerald-300" : "text-slate-400"}>
-            <span className="mr-2 text-slate-600">›</span>{line}{i===index && <span className="cursor-blink">▋</span>}
+
+      <div className="min-h-0 flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed">
+        <div className="space-y-2">
+          <div className="text-slate-500">$ atf observe --agent 402</div>
+          {lines.slice(0, index + 1).map((line, i) => (
+            <div
+              key={line}
+              className={i === index ? "text-emerald-300" : "text-slate-400"}
+            >
+              <span className="mr-2 text-slate-600">›</span>
+              {line}
+              {i === index && <span className="cursor-blink">▋</span>}
+            </div>
+          ))}
+          <div className="flex items-center gap-2 border-t border-white/10 pt-2 text-emerald-300">
+            <CircleCheck size={12} />
+            authority boundary intact
           </div>
-        ))}
-        <div className="flex items-center gap-2 border-t border-white/10 pt-2 text-emerald-300"><CircleCheck size={12}/> authority boundary intact</div>
+        </div>
       </div>
     </div>
   );
