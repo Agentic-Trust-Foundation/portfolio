@@ -28,6 +28,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .maturity-node:hover,.maturity-active { border-color:rgba(16,185,129,.45); background:rgba(16,185,129,.07); color:#d1fae5; }
 .flow-step { display:flex; align-items:center; gap:1rem; width:100%; border:1px solid rgba(255,255,255,.08); border-radius:1rem; padding:1rem; color:#94a3b8; background:rgba(255,255,255,.018); transition:.25s; }
 .flow-step:hover,.flow-active { border-color:rgba(16,185,129,.35); background:rgba(16,185,129,.055); color:#e2e8f0; transform:translateX(3px); }
+.sandbox-panel { border:1px solid rgba(255,255,255,.10); border-radius:1.5rem; background:linear-gradient(145deg,rgba(16,185,129,.035),rgba(15,23,42,.72)); box-shadow:0 25px 90px rgba(0,0,0,.28); overflow:hidden; }
+.sandbox-step { position:relative; display:flex; align-items:center; gap:.75rem; border:1px solid rgba(255,255,255,.07); border-radius:1rem; padding:.7rem; background:rgba(255,255,255,.018); transition:border-color .25s ease,background .25s ease,transform .25s ease; }
+.sandbox-step-active { border-color:rgba(16,185,129,.42); background:rgba(16,185,129,.055); transform:translateX(3px); }
+.sandbox-step-done { border-color:rgba(16,185,129,.18); }
+.sandbox-scan { position:absolute; right:.7rem; top:.7rem; width:6px; height:6px; border-radius:999px; background:#34d399; box-shadow:0 0 14px rgba(52,211,153,.8); animation:status-pulse 1s ease-in-out infinite; }
 .footer-link { transition:color .2s; }
 .footer-link:hover { color:#6ee7b7; }
 
