@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, ArrowRight, Check, ExternalLink, Github, LockKeyhole, Network, ShieldCheck, WalletCards, Globe2 } from "lucide-react";
 import Link from "next/link";
@@ -185,6 +186,6 @@ export function Landing() {
   );
 }
 
-function SectionKicker({children}:{children:React.ReactNode}) {
+function SectionKicker({children}:{children:ReactNode}) {
   return <div className="flex items-center gap-3 text-[10px] font-bold tracking-[.25em] text-emerald-400"><span className="h-px w-8 bg-emerald-400/60"/>{children}</div>;
 }
