@@ -7,6 +7,8 @@ import { ArrowDown, ArrowRight, Check, ExternalLink, Github, LockKeyhole, Networ
 import Link from "next/link";
 import { NetworkCanvas } from "./NetworkCanvas";
 import { LiveTerminal } from "./LiveTerminal";
+import { InteractiveSandbox } from "./InteractiveSandbox";
+import { QuickIntegration } from "./QuickIntegration";
 
 const ecosystem = [
   {
@@ -62,6 +64,7 @@ export function Landing() {
   const [tab,setTab]=useState(0);
   const [level,setLevel]=useState(2);
   const [flowStep,setFlowStep]=useState(2);
+  const [integration,setIntegration]=useState(false);
   const E=ecosystem[selected];
   const Icon=E.icon;
 
@@ -125,6 +128,15 @@ export function Landing() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#020711] py-20 sm:py-28">
+        <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
+          <SectionKicker>LIVE AGENTIC SANDBOX / SIMULATION</SectionKicker>
+          <h2 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight sm:text-6xl">See the trust boundary<br/><span className="text-slate-500">before the action executes.</span></h2>
+          <p className="mt-6 max-w-2xl leading-7 text-slate-400">Run a deterministic browser-side simulation of an agent requesting a financial action, crossing the ATF trust gate, binding to a site capability, and producing an auditable decision.</p>
+          <div className="mt-10"><InteractiveSandbox /></div>
         </div>
       </section>
 
